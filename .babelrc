@@ -1,0 +1,23 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage", // 按需引入，它能自动给每个文件添加其需要的polyfill
+        "corejs": 3 // 根据你的版本来写
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": 3,
+        "helpers": true, // 开启内联的babel helpers(即babel或者环境本来的存在的垫片或者某些对象方法函数)
+        "regenerator": true, // 开启generator函数转换成使用regenerator runtime来避免污染全局域
+        "useESModules": false
+      }
+    ]
+  ]
+}
